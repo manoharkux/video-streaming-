@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Streaming</title>
+    <style>
+        /* Add your CSS styling here */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to our Video Streaming Website!</h1>
+    </header>
+
+    <main>
+        <video id="videoPlayer" width="640" height="360" controls>
+            <source src="./[HDmoviesFlix.Gay]_RamSetu.2022.HOFM.1080p.WEB-DL.2.4GB.ESubs_[MoviesVerse.io].mkv" type="video/mp4">
+            <source src="your-video-file.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+
+        <section id="chatArea">
+            <!-- This is where the chat will be displayed -->
+            <h2>Chat</h2>
+            <div id="messages">
+                <!-- Chat messages will be inserted here -->
+            </div>
+
+            <form id="chatForm">
+                <input type="text" id="messageInput" placeholder="Type your message here...">
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Add your footer here -->
+    </footer>
+
+    <script>
+        const videoPlayer = document.getElementById("videoPlayer");
+        const messagesDiv = document.getElementById("messages");
+        const chatForm = document.getElementById("chatForm");
+        const messageInput = document.getElementById("messageInput");
+
+        // Play video
+        videoPlayer.play();
+
+        // Handle chat form submission
+        chatForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const message = messageInput.value;
+
+            if (message.trim()) {
+                const newMessage = document.createElement("p");
+                newMessage.textContent = message;
+                messagesDiv.appendChild(newMessage);
+
+                // Clear the input field
+                messageInput.value = "";
+            }
+        });
+    </script>
+</body>
+</html>
